@@ -1,13 +1,14 @@
 pipeline {
     agent any
     stages{
-        stage ('git clone') {
+        stage ('checkout') {
             steps {
-                git 'https://github.com/Pavan-Kumar-21-01/Jenkins-Zero-To-Hero.git'
+                git branch: 'main', url: 'https://github.com/Pavan-Kumar-21-01/Jenkins-Zero-To-Hero.git'
             }
         }
         stage ('Maven build') {
             steps{
+                sh 'ls -ltr'
                 sh 'java-maven-sonar-argocd-helm-k8s/spring-boot-app/Jenkinsfile && mvn clean package'
             }
         }
