@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages{
+        stage ('git clone') {
+            steps {
+                git 'java-maven-sonar-argocd-helm-k8s/spring-boot-app'
+            }
+        }
+        stage ('Maven build') {
+            steps{
+                sh 'mvn clean package'
+            }
+        }
+        stage ('Artifact') {
+            steps {
+                echo "building artifact"
+            }
+        }
+    }
+}
