@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage ('git clone') {
             steps {
-                git 'java-maven-sonar-argocd-helm-k8s/spring-boot-app'
+                git 'https://github.com/Pavan-Kumar-21-01/Jenkins-Zero-To-Hero.git'
             }
         }
         stage ('Maven build') {
