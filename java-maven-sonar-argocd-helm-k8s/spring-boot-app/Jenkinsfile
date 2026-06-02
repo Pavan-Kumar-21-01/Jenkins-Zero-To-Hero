@@ -8,7 +8,7 @@ pipeline {
         }
         stage ('Maven build') {
             steps{
-                sh 'mvn clean package'
+                sh 'java-maven-sonar-argocd-helm-k8s/spring-boot-app/Jenkinsfile && mvn clean package'
             }
         }
         stage ('Artifact') {
